@@ -1,0 +1,8 @@
+main: me.fudged.freeze.Freeze
+name: Freeze
+author: Fudged
+version: 1.0
+commands:
+  freeze:
+    usage: /<command>
+    description: Basic freeze command
