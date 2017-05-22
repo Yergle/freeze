@@ -22,14 +22,11 @@ public class Freeze extends JavaPlugin implements Listener{
 	
 	@Override
 	public void onDisable(){
-		// OOPS, let us clear the frozen players
 		for(UUID u : frozen){
 			unFreeze(Bukkit.getServer().getPlayer(u));
 		}
 		frozen.clear();
 	}
-	
-	// Let me get into a test server and test this out!
 	
 	public static Plugin getPlugin(){
 		return Bukkit.getServer().getPluginManager().getPlugin("Freeze");
@@ -39,7 +36,7 @@ public class Freeze extends JavaPlugin implements Listener{
 	
 	public List<UUID> getFrozenPlayers(){
 		return frozen;
-	} // Changed my mind, I am going to use a constructor
+	}
 	
 	public void freeze(Player p){
 		frozen.add(p.getUniqueId());
