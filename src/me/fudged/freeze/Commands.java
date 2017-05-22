@@ -10,8 +10,6 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Commands implements CommandExecutor {
 	
-	// Class name is conflicting with the command object. So I renamed the class to "Commands"
-	
 	Freeze freeze;
 	public Commands(Freeze f){
 		this.freeze = f;
@@ -41,7 +39,7 @@ public class Commands implements CommandExecutor {
 				if(freeze.getFrozenPlayers().contains(t.getUniqueId())){
 					freeze.unFreeze(t);
 					t.sendMessage(ChatColor.RED + "You are now unfrozen");
-					p.sendMessage(ChatColor.RED + "You have unfrozen " + args[0]);
+					p.sendMessage(ChatColor.RED + "You have unfrozen " + t.getName());
 					return true;
 				}else{
 					freeze.freeze(t);
